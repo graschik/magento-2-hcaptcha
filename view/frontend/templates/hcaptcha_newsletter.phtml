@@ -1,0 +1,27 @@
+<?php
+/** @var $block \Grasch\HCaptcha\Block\HCaptcha */
+/** @var $escaper \Magento\Framework\Escaper */
+
+?>
+<div
+    class="field-hcaptcha"
+    id="<?= /* @noEscape */ $block->getHCaptchaId() ?>-container"
+    data-bind="scope:'<?= /* @noEscape */ $block->getHCaptchaId() ?>'"
+>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script>
+  require(['jquery', 'domReady!'], function ($) {
+    $('#<?= /* @noEscape */ $block->getHCaptchaId() ?>-container')
+    .appendTo('#newsletter-validate-detail');
+  });
+</script>
+
+<script type="text/x-magento-init">
+{
+    "#<?= /* @noEscape */ $block->getHCaptchaId() ?>-container": {
+        "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    }
+}
+</script>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Grasch, Inc. All rights reserved.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="recaptcha.user.details" class="Grasch\HCaptcha\Block\HCaptcha">
+            <arguments>
+                <argument name="hcaptcha_for" xsi:type="string">track_order</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="recaptcha.order.details" class="Grasch\HCaptcha\Block\HCaptcha">
+            <arguments>
+                <argument name="hcaptcha_for" xsi:type="string">track_order</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

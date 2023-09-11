@@ -1,0 +1,26 @@
+<div data-bind="{
+    attr: {
+        'id': getHCaptchaId() + '-wrapper'
+    },
+    'afterRender': renderHCaptcha()
+}">
+    <div class="h-captcha"></div>
+    <!-- ko if: (!getIsInvisibleHCaptcha()) -->
+    <div class="field">
+        <div class="control">
+            <input type="checkbox"
+                   value=""
+                   class="required-captcha checkbox"
+                   name="hcaptcha-validate-"
+                   data-validate="{required:true}"
+                   data-bind="{
+                       attr: {
+                           'id': 'input-' + getHCaptchaId()
+                       }
+                   }"
+            >
+            </input>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

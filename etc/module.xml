@@ -1,0 +1,18 @@
+<?xml version="1.0"?><!--
+/**
+ * Copyright © Grasch, Inc. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Grasch_HCaptcha">
+        <sequence>
+            <module name="Magento_Customer"/>
+            <module name="Magento_Captcha"/>
+            <module name="Magento_ReCaptchaAdminUi"/>
+            <module name="Magento_ReCaptchaCustomer"/>
+            <module name="Magento_ReCaptchaFrontendUi"/>
+            <module name="PayPal_Braintree"/>
+        </sequence>
+    </module>
+</config>

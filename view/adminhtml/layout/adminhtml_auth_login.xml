@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <update handle="admin_login"/>
+    <update handle="hcaptcha"/>
+
+    <body>
+        <referenceBlock name="recaptcha" class="Grasch\HCaptcha\Block\HCaptcha" template="Grasch_HCaptcha::hcaptcha.phtml">
+            <arguments>
+                <argument name="hcaptcha_for" xsi:type="string">user_login</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

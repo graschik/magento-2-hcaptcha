@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Grasch, Inc. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="recaptcha_backend">
+            <label>Google reCAPTCHA Admin Panel | hCaptcha Admin Panel</label>
+            <group id="h_captcha" translate="label" type="text" sortOrder="951" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA</label>
+                <field id="site_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Site Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="secret_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Secret Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="size" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Size</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Size</source_model>
+                </field>
+
+                <field id="theme" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Theme</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Theme</source_model>
+                </field>
+
+                <field id="lang" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Language Code</label>
+                    <comment><![CDATA[
+                        Optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. See
+                        <a target="_blank" href="https://docs.hcaptcha.com/languages">supported Language Codes</a>.
+                ]]></comment>
+                </field>
+            </group>
+            <group id="h_captcha_invisible" translate="label" type="text" sortOrder="952" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA Invisible</label>
+                <field id="site_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Site Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="secret_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Secret Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="theme" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Theme</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Theme</source_model>
+                </field>
+
+                <field id="lang" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Language Code</label>
+                    <comment><![CDATA[
+                        Optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. See
+                        <a target="_blank" href="https://docs.hcaptcha.com/languages">supported Language Codes</a>.
+                ]]></comment>
+                </field>
+            </group>
+            <group id="h_captcha_failure_messages" translate="label" type="text" sortOrder="953" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA Failure Messages</label>
+
+                <field id="validation_failure_message" translate="label" type="textarea" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>hCAPTCHA Validation Failure Message</label>
+                </field>
+
+                <field id="technical_failure_message" translate="label" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>hCAPTCHA Technical Failure Message</label>
+                </field>
+            </group>
+        </section>
+        <section id="recaptcha_frontend">
+            <label>Google reCAPTCHA Storefront | hCaptcha Storefront</label>
+            <group id="h_captcha" translate="label" type="text" sortOrder="951" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA</label>
+                <field id="site_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Site Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="secret_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Secret Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="size" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Size</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Size</source_model>
+                </field>
+
+                <field id="theme" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Theme</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Theme</source_model>
+                </field>
+
+                <field id="lang" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Language Code</label>
+                    <comment><![CDATA[
+                        Optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. See
+                        <a target="_blank" href="https://docs.hcaptcha.com/languages">supported Language Codes</a>.
+                ]]></comment>
+                </field>
+            </group>
+            <group id="h_captcha_invisible" translate="label" type="text" sortOrder="952" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA Invisible</label>
+                <field id="site_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Site Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="secret_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Secret Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="theme" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Theme</label>
+                    <source_model>Grasch\HCaptcha\Model\OptionSource\Theme</source_model>
+                </field>
+
+                <field id="lang" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Language Code</label>
+                    <comment><![CDATA[
+                        Optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. See
+                        <a target="_blank" href="https://docs.hcaptcha.com/languages">supported Language Codes</a>.
+                ]]></comment>
+                </field>
+            </group>
+            <group id="h_captcha_failure_messages" translate="label" type="text" sortOrder="953" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>hCAPTCHA Failure Messages</label>
+
+                <field id="validation_failure_message" translate="label" type="textarea" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>hCAPTCHA Validation Failure Message</label>
+                </field>
+
+                <field id="technical_failure_message" translate="label" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>hCAPTCHA Technical Failure Message</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
