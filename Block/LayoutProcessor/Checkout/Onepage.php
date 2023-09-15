@@ -87,7 +87,7 @@ class Onepage implements LayoutProcessorInterface
                     'settings' => $this->captchaUiConfigResolver->get($key),
                     'displayArea' => 'additional-login-form-fields',
                     'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'recaptcha-checkout-inline-login-billing',
+                    'hCaptchaId' => 'hcaptcha-checkout-inline-login-billing',
                     'component' => 'Grasch_HCaptcha/js/hCaptcha'
                 ]
             ];
@@ -97,7 +97,7 @@ class Onepage implements LayoutProcessorInterface
                     'settings' => $this->captchaUiConfigResolver->get($key),
                     'displayArea' => 'additional-login-form-fields',
                     'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'recaptcha-checkout-login',
+                    'hCaptchaId' => 'hcaptcha-checkout-login',
                     'component' => 'Grasch_HCaptcha/js/hCaptcha'
                 ]
             ];
@@ -146,9 +146,9 @@ class Onepage implements LayoutProcessorInterface
             ['payment']['children']['payments-list']['children']['paypal-captcha']['children'] = [
                 'hcaptcha' => [
                     'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-login-form-fields',
+                    'displayArea' => 'additional-payment-fields',
                     'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'recaptcha-checkout-paypal-form',
+                    'hCaptchaId' => 'hcaptcha-checkout-paypal-form',
                     'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
                 ]
             ];
@@ -180,9 +180,9 @@ class Onepage implements LayoutProcessorInterface
             ['payment']['children']['payments-list']['children']['braintree-recaptcha']['children'] = [
                 'hcaptcha' => [
                     'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-login-form-fields',
+                    'displayArea' => 'hcaptcha-braintree',
                     'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'recaptcha-checkout-paypal-form',
+                    'hCaptchaId' => 'hcaptcha-checkout-braintree',
                     'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
                 ]
             ];
