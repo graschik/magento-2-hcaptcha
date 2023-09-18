@@ -6,6 +6,26 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\ReCaptchaUi\Model\UiConfigResolver">
+        <arguments>
+            <argument name="uiConfigProviders" xsi:type="array">
+                <item name="frontend_hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Frontend\UiConfigProvider\Proxy</item>
+                <item name="frontend_hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Frontend\UiConfigProviderInvisible\Proxy</item>
+                <item name="admih_hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\UiConfigProvider\Proxy</item>
+                <item name="admin_hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\UiConfigProviderInvisible\Proxy</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\ReCaptchaUi\Model\ValidationConfigResolver">
+        <arguments>
+            <argument name="validationConfigProviders" xsi:type="array">
+                <item name="frontend_hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Frontend\ValidationConfigProvider\Proxy</item>
+                <item name="frontend_hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Frontend\ValidationConfigProvider\Proxy</item>
+                <item name="admih_hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\ValidationConfigProvider\Proxy</item>
+                <item name="admin_hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\ValidationConfigProvider\Proxy</item>
+            </argument>
+        </arguments>
+    </type>
     <virtualType name="Magento\ReCaptchaAdminUi\Model\OptionSource\Type">
         <arguments>
             <argument name="options" xsi:type="array">
@@ -97,4 +117,24 @@
             </argument>
         </arguments>
     </virtualType>
+
+    <type name="Magento\Webapi\Controller\Rest\RequestValidator">
+        <plugin name="rest_webapi_recaptcha_validation" disabled="true"/>
+        <plugin name="rest_webapi_captcha_validation" type="Grasch\HCaptcha\Plugin\Magento\Webapi\Controller\Rest\RequestValidator\RestValidationPlugin"/>
+    </type>
+    <type name="Grasch\HCaptcha\Plugin\Magento\Webapi\Controller\Rest\RequestValidator\RestValidationPlugin">
+        <arguments>
+            <argument name="hcaptchaValidator" xsi:type="object">hCaptchaValidator</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\GraphQl\Query\ResolverInterface">
+        <plugin name="graphql_recaptcha_validation" disabled="true" />
+        <plugin name="graphql_captcha_validation" type="Grasch\HCaptcha\Plugin\Magento\Framework\GraphQl\Query\ResolverInterface\GraphQlValidator" />
+    </type>
+    <type name="Grasch\HCaptcha\Plugin\Magento\Framework\GraphQl\Query\ResolverInterface\GraphQlValidator">
+        <arguments>
+            <argument name="hcaptchaValidator" xsi:type="object">hCaptchaValidator</argument>
+        </arguments>
+    </type>
 </config>

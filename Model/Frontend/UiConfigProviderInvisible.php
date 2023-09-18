@@ -40,6 +40,7 @@ class UiConfigProviderInvisible implements UiConfigProviderInterface
                 'hl' => $this->config->getLanguageCode(Config::TYPE_INVISIBLE)
             ],
             'invisible' => true,
+            'hcaptcha' => true
         ];
     }
 }

@@ -17,8 +17,8 @@
     <type name="Magento\ReCaptchaUi\Model\ValidationConfigResolver">
         <arguments>
             <argument name="validationConfigProviders" xsi:type="array">
-                <item name="hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Frontend\ValidationConfigProvider\Proxy</item>
-                <item name="hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Frontend\ValidationConfigProvider\Proxy</item>
+                <item name="hcaptcha" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\ValidationConfigProvider\Proxy</item>
+                <item name="hcaptcha_invisible" xsi:type="object">Grasch\HCaptcha\Model\Adminhtml\ValidationConfigProvider\Proxy</item>
             </argument>
         </arguments>
     </type>
