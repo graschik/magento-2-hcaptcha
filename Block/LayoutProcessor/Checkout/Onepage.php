@@ -72,34 +72,28 @@ class Onepage implements LayoutProcessorInterface
             && $this->isHCaptchaEnabledFor->isHCaptchaEnabledFor($key)
         ) {
             $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
-            ['shippingAddress']['children']['customer-email']['children'] = [
-                'hcaptcha' => [
-                    'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-login-form-fields',
-                    'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'hcaptcha-checkout-inline-login',
-                    'component' => 'Grasch_HCaptcha/js/hCaptcha'
-                ]
+            ['shippingAddress']['children']['customer-email']['children']['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'additional-login-form-fields',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-inline-login',
+                'component' => 'Grasch_HCaptcha/js/hCaptcha'
             ];
             $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
-            ['payment']['children']['customer-email']['children'] = [
-                'hcaptcha' => [
-                    'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-login-form-fields',
-                    'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'hcaptcha-checkout-inline-login-billing',
-                    'component' => 'Grasch_HCaptcha/js/hCaptcha'
-                ]
+            ['payment']['children']['customer-email']['children']['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'additional-login-form-fields',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-inline-login-billing',
+                'component' => 'Grasch_HCaptcha/js/hCaptcha'
             ];
 
-            $jsLayout['components']['checkout']['children']['authentication']['children'] = [
-                'hcaptcha' => [
-                    'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-login-form-fields',
-                    'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'hcaptcha-checkout-login',
-                    'component' => 'Grasch_HCaptcha/js/hCaptcha'
-                ]
+            $jsLayout['components']['checkout']['children']['authentication']['children']['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'additional-login-form-fields',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-login',
+                'component' => 'Grasch_HCaptcha/js/hCaptcha'
             ];
 
             if (isset($jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
@@ -143,14 +137,12 @@ class Onepage implements LayoutProcessorInterface
             && $this->isHCaptchaEnabledFor->isHCaptchaEnabledFor($key)
         ) {
             $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
-            ['payment']['children']['payments-list']['children']['paypal-captcha']['children'] = [
-                'hcaptcha' => [
-                    'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'additional-payment-fields',
-                    'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'hcaptcha-checkout-paypal-form',
-                    'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
-                ]
+            ['payment']['children']['payments-list']['children']['paypal-captcha']['children']['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'additional-payment-fields',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-paypal-form',
+                'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
             ];
 
             if (isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
@@ -177,14 +169,12 @@ class Onepage implements LayoutProcessorInterface
             && $this->isHCaptchaEnabledFor->isHCaptchaEnabledFor($key)
         ) {
             $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
-            ['payment']['children']['payments-list']['children']['braintree-recaptcha']['children'] = [
-                'hcaptcha' => [
-                    'settings' => $this->captchaUiConfigResolver->get($key),
-                    'displayArea' => 'hcaptcha-braintree',
-                    'configSource' => 'checkoutConfig',
-                    'hCaptchaId' => 'hcaptcha-checkout-braintree',
-                    'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
-                ]
+            ['payment']['children']['payments-list']['children']['braintree-recaptcha']['children']['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'hcaptcha-braintree',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-braintree',
+                'component' => 'Grasch_HCaptcha/js/hCaptchaPaypal'
             ];
 
             if (isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
