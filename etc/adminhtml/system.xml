@@ -172,6 +172,11 @@
                     <label>hCAPTCHA Technical Failure Message</label>
                 </field>
             </group>
+            <group id="type_for">
+                <field id="braintree">
+                    <source_model>Grasch\HCaptcha\Model\Braintree\OptionSource</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>

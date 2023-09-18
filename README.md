@@ -9,6 +9,7 @@
 - hCaptcha for your store security.
 - hCaptcha works in Frontend pages as well as Backend.
 - Supports visible and invisible hCaptcha.
+- Supports REST API and GraphQl validation.
 - Compatible with Google reCaptcha. 
 
 <img alt="Admin Login" src="docs/img/admin_login.png" width="30%"> <img alt="Login" src="docs/img/login.png" width="50%">

@@ -27,6 +27,8 @@
         <arguments>
             <argument name="layoutProcessors" xsi:type="array">
                 <item name="recaptcha" xsi:type="object" sortOrder="100">\Magento\ReCaptchaCheckout\Block\LayoutProcessor\Checkout\Onepage</item>
+                <item name="store_pickup_recaptcha" xsi:type="object" sortOrder="101">\Magento\ReCaptchaStorePickup\Block\LayoutProcessor\Checkout\Onepage</item>
+                <item name="paypal_recaptcha" xsi:type="object" sortOrder="102">\Magento\ReCaptchaPaypal\Block\LayoutProcessor\Checkout\Onepage</item>
                 <item name="hcaptcha" xsi:type="object" sortOrder="200">\Grasch\HCaptcha\Block\LayoutProcessor\Checkout\Onepage</item>
             </argument>
         </arguments>

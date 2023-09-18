@@ -7,6 +7,12 @@ var config = {
             },
             'PayPal_Braintree/js/view/payment/method-renderer/cc-form': {
                 'Grasch_HCaptcha/js/braintree-cc-method-mixin': true
+            },
+            'jquery': {
+                'Grasch_HCaptcha/js/web-api/jquery-mixin': true
+            },
+            'Magento_Checkout/js/model/place-order': {
+                'Grasch_HCaptcha/js/model/place-order-mixin': true
             }
         }
     }

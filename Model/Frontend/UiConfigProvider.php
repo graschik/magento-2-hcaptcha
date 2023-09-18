@@ -40,6 +40,7 @@ class UiConfigProvider implements UiConfigProviderInterface
                 'hl' => $this->config->getLanguageCode()
             ],
             'invisible' => false,
+            'hcaptcha' => true
         ];
     }
 }
