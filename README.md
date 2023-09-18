@@ -7,10 +7,25 @@
 
 ## Highlight features for Magento 2 HCaptcha
 - hCaptcha for your store security.
-- hCaptcha works in Frontend pages as well as Backend.
+- hCaptcha works in Frontend pages.
+    - Customer Login.
+    - Forgot Password.
+    - Create New Customer Account.
+    - Edit Customer Account.
+    - Contact Us.
+    - Product Review.
+    - Newsletter Subscription.
+    - Send To Friend.
+    - Checkout/Placing Order.
+    - Coupon Codes.
+    - PayPal PayflowPro payment form.
+- hCaptcha works in Backend pages.
+    - Login.
+    - Forgot Password.
 - Supports visible and invisible hCaptcha.
 - Supports REST API and GraphQl validation.
 - Compatible with Google reCaptcha. 
+
 
 <img alt="Admin Login" src="docs/img/admin_login.png" width="30%"> <img alt="Login" src="docs/img/login.png" width="50%">
 
