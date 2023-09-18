@@ -56,6 +56,7 @@ class Onepage implements LayoutProcessorInterface
         $jsLayout = $this->processBraintree($jsLayout);
         $jsLayout = $this->processStorePickUp($jsLayout);
         $jsLayout = $this->processPlaceOrder($jsLayout);
+        $jsLayout = $this->processCheckoutSalesRule($jsLayout);
 
         return $jsLayout;
     }
@@ -262,6 +263,39 @@ class Onepage implements LayoutProcessorInterface
                 ['payment']['children']['beforeMethods']['children']['place-order-recaptcha-container'])) {
                 unset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
                     ['payment']['children']['beforeMethods']['children']['place-order-recaptcha-container']);
+            }
+        }
+
+        return $jsLayout;
+    }
+
+    /**
+     * Process Checkout Sales Rule
+     *
+     * @param array $jsLayout
+     * @return array
+     * @throws InputException
+     */
+    public function processCheckoutSalesRule(array $jsLayout): array
+    {
+        $key = 'coupon_code';
+        if ($this->isCaptchaEnabled->isCaptchaEnabledFor($key)
+            && $this->isHCaptchaEnabledFor->isHCaptchaEnabledFor($key)
+        ) {
+            $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+            ['payment']['children']['afterMethods']['children']['discount']['children']
+            ['hcaptcha'] = [
+                'settings' => $this->captchaUiConfigResolver->get($key),
+                'displayArea' => 'captcha',
+                'configSource' => 'checkoutConfig',
+                'hCaptchaId' => 'hcaptcha-checkout-coupon-apply',
+                'component' => 'Grasch_HCaptcha/js/hCaptchaCheckoutSalesRule'
+            ];
+
+            if (isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+                ['payment']['children']['afterMethods']['children']['discount']['children']['checkout_sales_rule'])) {
+                unset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+                    ['payment']['children']['afterMethods']['children']['discount']['children']['checkout_sales_rule']);
             }
         }
 
