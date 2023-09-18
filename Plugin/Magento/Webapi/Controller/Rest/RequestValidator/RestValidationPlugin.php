@@ -74,9 +74,11 @@ class RestValidationPlugin extends BaseRestValidationPlugin
     /**
      * @inheritdoc
      */
-    public function afterValidate(RequestValidator $subject): void
+    public function aroundValidate(RequestValidator $subject, callable $proceed): void
     {
-        $route = $this->restRouter->match($this->request);
+        $request = clone $this->request;
+        $proceed();
+        $route = $this->restRouter->match($request);
         /** @var Endpoint $endpoint */
         $endpoint = $this->endpointFactory->create([
             'class' => $route->getServiceClass(),
@@ -94,7 +96,7 @@ class RestValidationPlugin extends BaseRestValidationPlugin
                 throw new WebapiException(__('HCaptcha validation failed, please try again'));
             }
         } else {
-            parent::afterValidate($subject);
+            parent::aroundValidate($subject, $proceed);
         }
     }
 }
